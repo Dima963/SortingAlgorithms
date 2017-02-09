@@ -1,19 +1,21 @@
 package com.company;
 
 public class GnomSort {
-    public static int[] sort(int[] number){
+
+    public static int[] sort(int[] numbers){
+
         int i = 1;
-        while (i<number.length){
-            if(i==0||number[i-1]<=number[i]){
+        while (i<numbers.length){
+            if(i==0||numbers[i-1] <= numbers[i]){
                 i++;
-            }else {
-                int temp = number[i];
-                number[i] = number[i-1];
-                number[i-1] = temp;
+            }else{
+                int temp = numbers[i];
+                numbers[i] = numbers[i-1];
+                numbers[i-1] = temp;
                 i--;
             }
         }
 
-        return number;
+        return numbers;
     }
 }
