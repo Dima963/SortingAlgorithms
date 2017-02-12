@@ -8,22 +8,24 @@ public class Main {
 
         Random random =  new Random();
 
-        int[] Arr = new int [30];
-        int[] ArrGnom = new int [30];
-        int[] ArrMerge = new int [30];
-        int[] ArrBubble = new int [30];
-        int[] ArrQuick =  new int[30];
+        int[] Arr = new int [14];
+        int[] ArrGnom = new int [14];
+        int[] ArrMerge = new int [14];
+        int[] ArrBubble = new int [14];
+        int[] ArrQuick =  new int[14];
+        int[] ArrInsert =  new int[14];
 
 
 
         System.out.println("Initial array");
-        for (int i = 0; i < 30; i++){
-            Arr[i] = random.nextInt(30);
-            ArrGnom[i] = random.nextInt(30);
-            ArrMerge[i] = random.nextInt(30);
-            ArrBubble[i] = random.nextInt(30);
-            ArrQuick[i] = random.nextInt(30);
-            System.out.print(Arr[i] + " ");
+        for (int i = 0; i < 14; i++){
+            Arr[i] = random.nextInt(14);
+            ArrGnom[i] = random.nextInt(14);
+            ArrMerge[i] = random.nextInt(14);
+            ArrBubble[i] = random.nextInt(14);
+            ArrQuick[i] = random.nextInt(14);
+            ArrInsert[i] = random.nextInt(14);
+
         }
         System.out.println(" ");
 
@@ -66,6 +68,17 @@ public class Main {
             System.out.print(i);
             System.out.print(" ");
         }
+
+
+
+        System.out.println(" ");
+        System.out.println("Insert Sort:");
+        int[] Insert =  InsertionSort.sort(ArrInsert);
+        for (int i = 0; i<Insert.length; i++){
+            System.out.print(Insert[i]+" " );
+        }
+
+
 
     }
 }
