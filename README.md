@@ -58,6 +58,90 @@ while (i<numbers.length){
 
 ### Quick Sort
 
-Швидке сортування — алгоритм сортування, добре відомий, як алгоритм розроблений Чарльзом Гоаром, який не потребує додаткової пам'яті і виконує у середньому O(nlogn)  операцій. Однак, у найгіршому випадку робить O(n^2)  порівнянь.
+Швидке сортування — алгоритм сортування, добре відомий, як алгоритм розроблений Чарльзом Гоаром, який не потребує додаткової пам'яті і виконує у середньому O(nlogn) операцій. Однак, у найгіршому випадку робить O(n^2)  порівнянь.
 Швидке сортування є алгоритмом на основі порівнянь, і не є стабільним.
 
+```java
+int middle= lowInndex+(highInde-lowInndex)/2;
+        int i = lowInndex;
+        int j =  highInde;
+        while (i<j){
+            while (i<middle&&(number[i]<=number[middle])){
+                i++;
+            }
+            while (middle<j&&(number[middle]<=number[j])){
+                j--;
+            }
+            if(i<j){
+                int temp = number[i];
+                number[i] = number[j];
+                number[j] = temp;
+
+                if(i==middle){
+                    middle = j;
+                }else if(j==middle){
+                    middle = i;
+                }
+            }
+        }
+        quickSort(lowInndex, middle);
+        quickSort(middle+1, highInde);
+```
+
+### Shell Sort
+
+Сортування Шелла - удосконалена версія сортування вставками. Ідея полягає в порівнянні елементів, які знаходяться не тільки рядом але й на певній відстані один від одного.
+
+```java
+for (int i = number.length/2; i>0; i /= 2){
+            for (int j = i;j<number.length; j++ ){
+                int temp =  number[j];
+                int k;
+                for (k = j; k>=i; k-=i){
+                    if(temp<number[k-i])
+                        number[k] = number[k-i];
+                    else
+                        break;
+                }
+                number[k] = temp;
+            }
+        }
+```
+
+### Selection Sort
+
+Кроки алгоритму:
+
+* Знаходимо номер мінімального значення в списку.
+* Здійснюємо обмін цього значення із значення першої невідсортованої позиції
+* Тепер сортуємо хвіст списку, виключив з розгляду вже відсортовані елементи.
+
+```java
+ for (int i =  0; i<number.length; i++){
+            int index =  i;
+            for (int j = i+1; j<number.length; j++){
+                if(number[j]<number[index]){
+                    index = j;
+                }
+            }
+            int temp = number[i];
+            number[i] = number[index];
+            number[index] = temp;
+        }
+```
+
+### Insertion Sort
+
+Алгоритм сортування, в якому елементи вхідної послідовності переглядаються по одному і кожен новий поступивший елемент в підхлдяще місце рініш упорядкованих елементів
+
+```java
+for (int i = 1; i<number.length; i++){
+            int temp = number[i];
+            int j = i-1;
+            while (j>=0 && number[j]>temp){
+                number[j+1] = number[j];
+                j=j-1;
+            }
+            number[j+1] = temp;
+        }
+```
