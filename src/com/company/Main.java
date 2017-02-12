@@ -14,6 +14,7 @@ public class Main {
         int[] ArrBubble = new int [14];
         int[] ArrQuick =  new int[14];
         int[] ArrInsert =  new int[14];
+        int[] ArrShell =  new int[14];
 
 
 
@@ -25,6 +26,7 @@ public class Main {
             ArrBubble[i] = random.nextInt(14);
             ArrQuick[i] = random.nextInt(14);
             ArrInsert[i] = random.nextInt(14);
+            ArrShell[i] =  random.nextInt(14);
 
         }
         System.out.println(" ");
@@ -76,6 +78,13 @@ public class Main {
         int[] Insert =  InsertionSort.sort(ArrInsert);
         for (int i = 0; i<Insert.length; i++){
             System.out.print(Insert[i]+" " );
+        }
+
+        System.out.println(" ");
+        System.out.println("Shell Sort:");
+        int[] Shell =  ShellSort.sort(ArrShell);
+        for (int i = 0; i<Shell.length; i++){
+            System.out.print(Shell[i]+" " );
         }
 
 
